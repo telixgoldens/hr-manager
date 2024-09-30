@@ -1,0 +1,76 @@
+.sign-in{
+    background-image: url("../assets/1881 1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.sign-in-body{
+    width: 640px;
+    background-color: white;
+    border-radius: 8px;
+}
+.hr-img{
+    width: 45.3px;
+    height: 43.92px;
+    border-radius: 10.98px;
+
+}
+.sign-in-header{
+    font-size: 27.03px;
+    font-weight: 700;
+    font-family: var(--ff-bri--);
+    margin-bottom: 24px;
+}
+.sign-in-hr{
+    font-size: 20px;
+    font-family: var(--ff-inter--);
+    font-family: 600;
+    line-height: 32px;
+    margin-bottom: 41px;
+}
+label{
+    font-size: 16px;
+    font-family: var(--ff-inter--);
+    font-weight: 600;
+    line-height: 24px;
+    margin-top: 8px;
+}
+#fgt-pswd{
+    margin-top: 8px;
+}
+.sign-in-input{
+    width: 544px;
+    height: 48px;
+    border: none;
+    background-color: #F3F3F3;
+    border-radius: 4px;
+    
+}
+.sign-in-btn{
+    width: 544px;
+    height: 48px;
+    background-color: #3439CA;
+    color: #FFFFFF;
+    border-radius: 4px;
+    margin-top: 41px;
+    font-size: 16px;
+    font-weight: 500;
+}
+@media(max-width:768px){
+    .sign-in{
+        background-image: none;
+        padding: auto;
+    }
+    .sign-in-body{
+        width: 98%;
+        padding: auto;
+        
+    }
+    .sign-in-input{
+        width: 100%;
+    }
+    .sign-in-btn{
+        width: 100%;
+        
+    }
+}
