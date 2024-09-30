@@ -2,7 +2,7 @@ import "./App.css";
 import ForgetPassword from "./auth/ForgetPassword";
 import ResetPassword from "./auth/ResetPassword";
 import SignIn from "./auth/SignIn";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Admindashboard from "./pages/admin-dashboard/Admindashboard";
 import AdminSummary from "./pages/admin-dashboard/AdminSummary";
 import Employee from "./pages/admin-dashboard/Employee"
@@ -20,6 +20,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate to="/admin-dashboard" />} />
           <Route path="/auth/signin" element={<SignIn />} />
           <Route path="/auth/forgetpassword" element={<ForgetPassword />} />
           <Route path="/auth/resetpassword" element={<ResetPassword />} />
