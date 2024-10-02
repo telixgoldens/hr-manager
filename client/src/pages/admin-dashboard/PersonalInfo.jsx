@@ -110,7 +110,7 @@ const PersonalInfo = () => {
                 Documents
               </Link>
               <Link
-                to="/admin-dashboard/employess/personal-info/account-access"
+                to="/admin-dashboard/employees/personal-info/account-access"
                 className={
                   accountAccess
                     ? "active-link addEmploy"

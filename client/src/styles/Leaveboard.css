@@ -1,0 +1,39 @@
+.leave-summary {
+  margin-top: 24px;
+  
+}
+.leaveboard-h1 {
+  font-size: 28px;
+  font-family: var(--ff-Dmsan--);
+  font-weight: 500;
+  line-height: 42px;
+  color: #161e54;
+}
+.leave-summary-div-1{
+    width: 100%;
+    border: 1px solid #F1F2F3;
+    border-radius: 5px;
+    padding: 19px;
+}
+
+@media(max-width:768px){
+    .leaveboard-main{
+        width: 340px;
+    }
+    .leaveboard{
+        flex-direction: column;
+    }
+    .leave-summary{
+        flex-direction: column;
+    }
+    
+}
+@media (min-width: 765px) and (max-width: 1024px) {
+    .leaveboard-admin {
+        width: 475px;
+    }
+  
+    .leave-summary {
+    flex-direction: column;
+  }
+}

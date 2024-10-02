@@ -3,11 +3,13 @@ import taskboard2 from "./assets/taskboardicon2.svg";
 import taskboard3 from "./assets/taskboardicon3.svg";
 import taskboard4 from "./assets/taskboardicon4.svg";
 import LeaveBoard1 from "./assets/leaveboard1.svg";
-import employeeimg1 from "./assets/employeeimg1.svg"
-import employeeimg2 from "./assets/employeeimg2.svg"
-import employeeimg3 from "./assets/employeeimg3.svg"
-import employeeimg4 from "./assets/employeeimg4.svg"
-import employeeimg5 from "./assets/employeeimg5.svg"
+import employeeimg1 from "./assets/employeeimg1.svg";
+import employeeimg2 from "./assets/employeeimg2.svg";
+import employeeimg3 from "./assets/employeeimg3.svg";
+import employeeimg4 from "./assets/employeeimg4.svg";
+import employeeimg5 from "./assets/employeeimg5.svg";
+import playrollgraph1 from "./assets/playrollgraph1.svg"
+import playrollgraph2 from "./assets/playrollgraph2.svg"
 
 export const Employ = [
   {
@@ -112,9 +114,6 @@ export const Employ = [
   },
 ];
 
-
-
-
 export const taskboard = [
   {
     id: 1,
@@ -174,7 +173,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "pending",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 2,
@@ -185,7 +184,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "pending",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 3,
@@ -196,7 +195,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "Declined",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 4,
@@ -207,7 +206,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "Approved",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 5,
@@ -218,7 +217,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "pending",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 6,
@@ -229,7 +228,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "Declined",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 7,
@@ -240,7 +239,7 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "Approved",
-    dot: "..."
+    dot: "...",
   },
   {
     id: 8,
@@ -251,7 +250,162 @@ export const leaveBoard = [
     End: "End: 10 Mar 2023",
     Days: "6 Days",
     Status: "Approved",
-    dot: "..."
+    dot: "...",
   },
-  
+];
+
+export const payRollgraph =[
+  {
+    id: 1,
+    name: "Total Employees",
+    number: 134,
+    time: "Since last month",
+    graph: playrollgraph1,
+  },
+  {
+    id: 2,
+    name: "Total Payroll for the month",
+    number: "$32,980,806",
+    time: "Since last month",
+    graph: playrollgraph2,
+  },
+  {
+    id: 3,
+    name: "Total Deductions",
+    number: "$300,000",
+    time: "Since last month",
+    graph: playrollgraph1,
+  },
+  {
+    id: 4,
+    name: "Total Net Salary",
+    number: "$300,000",
+    time: "Since last month",
+    graph: playrollgraph1,
+  },
 ]
+
+export const payRollTable = [
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+  {
+    id: 1,
+    Image: LeaveBoard1,
+    name: "Oluwatosin Sanya ",
+    salary: "£560,000",
+    allowance: "£50,000",
+    deductions: "5,000",
+    tax: "5%",
+    netSalary: "£560,000",
+    
+  },
+];
+
+
+export const teams = [
+  {
+    id: 1,
+    name: "Aisha Akinwunmi",
+    position: "Manager",
+    Image: employeeimg1,
+  },
+  {
+    id: 2,
+    name: "Kingsley Ifijie",
+    position: "Front-end Developer",
+    Image: employeeimg2,
+  },
+  {
+    id: 3,
+    name: "Kekere-Ekun Tolani",
+    position: "Data Analyst",
+    Image: employeeimg3,
+  },
+  {
+    id: 4,
+    name: "Badmus John",
+    position: "Manager",
+    Image: employeeimg4,
+  },
+  {
+    id: 5,
+    name: "Oluwatobi Damilola",
+    position: "Back-End Developer",
+    Image: employeeimg5,
+  },
+];

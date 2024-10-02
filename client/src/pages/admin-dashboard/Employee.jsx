@@ -3,6 +3,7 @@ import { Employ } from "../../taskboard";
 import Table from "react-bootstrap/Table";
 import { Outlet, Link, useMatch } from "react-router-dom";
 import addIcon from "../../assets/plus.svg";
+import "../../styles/Employees.css"
 
 
 const Employees = () => {
@@ -12,7 +13,7 @@ const Employees = () => {
   return (
     <>
       {match ? (
-        <main className="mt-lg-5 container">
+        <main className="mt-lg-5  employee-main">
           <h1 className="">Employees</h1>
           <p className="title">Dashboard/Employee</p>
           <div className="d-flex align-items-center justify-content-between gap-4">
@@ -46,17 +47,16 @@ const Employees = () => {
                   backgroundColor: "#3439CA",
                   fontFamily: "Bricolage Grotesque, sans-serif",
                 }}
-                className="newEmployeebtn"
+                className="task-btn"
               >
-                <img src={addIcon} className="me-1" />
+                <img src={addIcon} className="me- " id="plus"/>
                 New Employee
               </button>
             </Link>
           </div>
-          <hr />
           {/* Tables */}
 
-          <div className="mt-5 border p-3 rounded-4">
+          <div className="mt-5 border  rounded-4">
             <div>
               <Table responsive="lg">
                 <thead className="text-white">

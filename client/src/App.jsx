@@ -14,6 +14,9 @@ import Professional from "./pages/admin-dashboard/Professional";
 import AccountAccess from "./pages/admin-dashboard/AccountAccess";
 import Documents from "./pages/admin-dashboard/Documents";
 import PersonalInfo from "./pages/admin-dashboard/PersonalInfo";
+import Teams from "./pages/admin-dashboard/Teams";
+import NewTeams from "./pages/admin-dashboard/NewTeams";
+import EditTeams from "./pages/admin-dashboard/EditTeams";
 
 function App() {
   return (
@@ -31,6 +34,11 @@ function App() {
             <Route path="/admin-dashboard/employees/personal-info/professional" element={<Professional/>}/>
             <Route path="/admin-dashboard/employees/personal-info/account-access" element={<AccountAccess/>}/>
             <Route path="/admin-dashboard/employees/personal-info/documents" element={<Documents/>}/>
+            <Route path="/admin-dashboard/employees/teams" element={<Teams/>}>
+            <Route path="/admin-dashboard/employees/teams/new-teams" element={<NewTeams />}/>
+            <Route path="/admin-dashboard/employees/teams/edit-teams" element={< EditTeams/>}/>
+            
+            </Route>
           
             </Route>
             

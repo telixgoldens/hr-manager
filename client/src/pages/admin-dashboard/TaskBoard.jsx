@@ -10,9 +10,9 @@ import "../../styles/Taskboard.css";
 import plus from "../../assets/plus.svg";
 import successIcon from "../../assets/Success Icon.svg";
 
-
 const TaskBoard = () => {
   const [show, setShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -91,25 +91,38 @@ const TaskBoard = () => {
                   </Button>
                   <Button variant="primary" onClick={handleClose}>
                     Save Changes
+                    <Modal
+                      size="lg"
+                      show={lgShow}
+                      onHide={() => setLgShow(false)}
+                      aria-labelledby="example-modal-sizes-title-lg"
+                    >
+                      <Modal.Header closeButton>
+                        <Modal.Title id="example-modal-sizes-title-lg">
+                          Save
+                        </Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>check this out</Modal.Body>
+                    </Modal>
                   </Button>
                 </Modal.Footer>
               </Modal>
             </div>
           </div>
-          <div className="d-flex gap-3 justify-content-between task-summary">
+          <div className="d-flex gap-2 justify-content-between task-summary">
             {taskboard.map((taskboard) => {
               const { id, name, number, Image } = taskboard;
               return (
                 <div
                   key={id}
-                  className=" gap-5 d-flex justify-content-between task-summary-div-1 "
+                  className=" gap-5 d-flex container justify-content-between task-summary-div-1 "
                 >
                   <div className=" summary-task-1">
                     <h4 className="summary-task-name">{name}</h4>
                     <h1 className="summary-task-number">{number}</h1>
                   </div>
                   <div className="">
-                    <img src={Image} alt=""className="summary-task-img" />
+                    <img src={Image} alt="" className="summary-task-img" />
                   </div>
                 </div>
               );
@@ -117,14 +130,12 @@ const TaskBoard = () => {
           </div>
         </div>
         <div className="admin-summary-2">
-            <div className="container">
-              <h2 className="admin-summary-taskboard">Taskboard</h2>
-            </div>
-          <Table responsive = "lg">
+          <div className="container">
+            <h2 className="admin-summary-taskboard">Taskboard</h2>
+          </div>
+          <Table responsive="lg">
             <thead className="">
               <tr className="task-head">
-                
-              
                 <th className=" hash container">#</th>
                 <th className="">Task</th>
                 <th>Team</th>
@@ -137,16 +148,21 @@ const TaskBoard = () => {
                 const { id, Task, Team, Action, Start, End } = adminTables;
                 return (
                   <tr key={id} className="">
-                    <td className="check-input"> 
-                      <input type="checkbox" name="" id="check-box"  className="container"/>
+                    <td className="check-input">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id="check-box"
+                        className="container"
+                      />
                     </td>
                     <td className="table-input pt-3">{Task}</td>
                     <td>
                       <img src={Team} alt="" />
                     </td>
                     <td className="pt-1">
-                     <p id="start">{Start}</p> 
-                     <p id="end">{End}</p>
+                      <p id="start">{Start}</p>
+                      <p id="end">{End}</p>
                     </td>
                     <td className="">{Action}</td>
                   </tr>

@@ -2,6 +2,7 @@ import React from "react";
 import { leaveBoard } from "../../taskboard";
 import { leavelist } from "../../taskboard";
 import Table from "react-bootstrap/Table";
+import "../../styles/Leaveboard.css"
 
 
 const LeaveBoard = () => {
@@ -10,22 +11,22 @@ const LeaveBoard = () => {
       <main className="leaveboard-main">
         <div className="pt-4 ">
           <div className="">
-            <h1 className="taskboard-h1">Taskboard</h1>
-            <div className="d-flex justify-content-between taskboard ">
+            <h1 className="leaveboard-h1">Taskboard</h1>
+            <div className="d-flex  leaveboard ">
               <h3 className="taskboard-h3">Dashboard/Leaveboard</h3>
             </div>
           </div>
-          <div className="d-flex gap-3 justify-content-between task-summary">
+          <div className="d-flex gap-3 justify-content-between leave-summary">
             {leavelist.map((taskboard) => {
               const { id, name, number } = taskboard;
               return (
                 <div
                   key={id}
-                  className="task-summary-div-1 "
+                  className="leave-summary-div-1 "
                 >
                   <div className=" summary-task-1">
-                    <h4 className="summary-task-name">{name}</h4>
-                    <h1 className="summary-task-number">{number}</h1>
+                    <h4 className="summary-task-name text-center">{name}</h4>
+                    <h1 className="summary-task-number text-center">{number}</h1>
                   </div>
                   
                 </div>
@@ -38,13 +39,12 @@ const LeaveBoard = () => {
           <Table responsive = "lg">
             <thead className="">
               <tr className="task-head">
-                <th className="">Name</th>
-                <th></th>
-                <th>Leave Type</th>
-                <th>Duration</th>
-                <th>Days</th>
-                <th>Status</th>
-                <th></th>
+                <th className="bg-light">Name</th>
+                <th className="bg-light">Leave Type</th>
+                <th className="bg-light">Duration</th>
+                <th className="bg-light">Days</th>
+                <th className="bg-light">Status</th>
+                <th className="bg-light"></th>
               </tr>
             </thead>
             <tbody>
@@ -52,18 +52,17 @@ const LeaveBoard = () => {
                 const { id, Image, name, leavetype, Start, End, Days, Status, dot } = leaveBoard;
                 return (
                   <tr key={id} className="">
-                    <td>
-                      <img src={Image} alt="leave-img" />
+                    <td className="d-flex align-items-center gap-3">
+                      <img src={Image} alt="leave-img" />{name}
                     </td>
-                    <td className="table-input pt-3">{name}</td>
-                    <td className="">{leavetype}</td>
+                    <td className="pt-3">{leavetype}</td>
                     <td className="pt-1">
                      <p id="start">{Start}</p> 
                      <p id="end">{End}</p>
                     </td>
-                    <td className="">{Days}</td>
-                    <td className="">{Status}</td>
-                    <td className="">{dot}</td>
+                    <td className="pt-3">{Days}</td>
+                    <td className="pt-3">{Status}</td>
+                    <td className="pt-3">{dot}</td>
                   </tr>
                 );
               })}
