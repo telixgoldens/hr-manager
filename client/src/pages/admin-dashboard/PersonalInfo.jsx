@@ -100,12 +100,7 @@ const PersonalInfo = () => {
                     ? "active-link addEmploy"
                     : "text-secondary addEmploy"
                 }
-                // onClick={() => {
-                //   setDocuments(!false);
-                //   setPersonalInfor(false);
-                //   setProfessional(false);
-                //   setAccountAccess(false);
-                // }}
+                
               >
                 Documents
               </Link>
@@ -129,7 +124,7 @@ const PersonalInfo = () => {
           </div>
           <hr />
           <div className="mt-4">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className="personal-form">
               {/* 1 */}
               <div className="d-md-flex gap-5 mb-4">
                 <div className="col-lg mb-3 mb-lg-0 w-100">
@@ -236,7 +231,7 @@ const PersonalInfo = () => {
                 </div>
               </div>
               <div className="d-flex row mb-3">
-                <label className="">Thumnail</label>
+                <label className="">Thumbnail</label>
                 <p className="text-secondary">
                   <img src={iIcon} className="pb-1" />
                   This image will appear in the explore page, upload a square
@@ -246,8 +241,8 @@ const PersonalInfo = () => {
                 <input type="file" className="custom-file-input" />
               </div>
               {/* end */}
-              <div className="d-lg-flex gap-3">
-                <Link className="w-25" to="">
+              <div className="d-lg-flex gap-3 ">
+                <Link className="" to="">
                   <button className="cancel">Cancel</button>
                 </Link>
                 <button

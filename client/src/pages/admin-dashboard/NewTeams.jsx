@@ -21,7 +21,7 @@ function MyVerticallyCenteredModal(props) {
         <img src={successIcon} alt="" />
         <h1>Saved Successfully</h1>
         <p>Employee has been successfully added</p>
-        <Button onClick={props.onHide}>Continue</Button>
+        <Button onClick={props.onHide} className="all-modal">Continue</Button>
       </Modal.Body>
     </Modal>
   );
@@ -104,7 +104,7 @@ const NewTeams = () => {
             </div>
             {/* end */}
             <div className="d-lg-flex gap-3">
-              <Link className="w-25" to="">
+              <Link className="" to="">
                 <button className="cancel">Cancel</button>
               </Link>
               <button

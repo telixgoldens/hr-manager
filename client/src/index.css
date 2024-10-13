@@ -12,3 +12,8 @@ a{
   color: #343536;
 
 }
+body{
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  overflow-x: hidden;
+}

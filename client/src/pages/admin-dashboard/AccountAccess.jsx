@@ -177,7 +177,7 @@ const AccountAccess = () => {
             </div>
             {/* end */}
             <div className="d-lg-flex gap-3">
-              <Link className="w-25" to="">
+              <Link className="" to="">
                 <button className="cancel">Cancel</button>
               </Link>
               <button

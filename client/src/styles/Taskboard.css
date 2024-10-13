@@ -1,5 +1,5 @@
-.task-summary{
-    margin-top: 34px;
+.task-summary {
+  margin-top: 34px;
 }
 
 .taskboard-h1 {
@@ -45,7 +45,7 @@
 .task-summary-div-1 {
   border-radius: 5px;
   padding: 18px;
-  border: 1px solid #F1F2F3;
+  border: 1px solid #f1f2f3;
 }
 
 .summary-task-name {
@@ -53,7 +53,6 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 20.83px;
-  
 }
 .summary-task-number {
   font-family: var(--ff-Dmsan--);
@@ -67,23 +66,40 @@
   padding: 5px 5px 6px 5px;
   border-radius: 4px 0px 0px 0px;
 }
-@media(max-width:768px){
-    .taskboard-admin{
-        width: 340px;
-    }
-    .taskboard{
-        flex-direction: column;
-    }
-    .task-summary{
-        flex-direction: column;
-    }
+
+.settings-width {
+  width: 50%;
+}
+.setting-big {
+  font-family: var(--ff-Dmsan--);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+.input-heading {
+  font-family: var(--ff-Dmsan--);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@media (max-width: 768px) {
+  .taskboard-admin {
+    width: 340px;
+  }
+  .taskboard {
+    flex-direction: column;
+  }
+  .task-summary {
+    flex-direction: column;
+  }
 }
 @media (min-width: 765px) and (max-width: 1024px) {
-    .taskboard-admin {
-        width: 475px;
-    }
-  
-    .task-summary {
+  .taskboard-admin {
+    width: 475px;
+  }
+
+  .task-summary {
     flex-direction: column;
   }
 }

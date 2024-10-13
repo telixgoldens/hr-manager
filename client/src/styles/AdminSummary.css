@@ -2,6 +2,7 @@
   border: 1px solid #f1f2f3;
   padding: 20px 17px;
   border-radius: 10px;
+  width: 100%;
 }
 .h1 {
   font-family: "Inter", sans-serif;
@@ -39,10 +40,9 @@
   margin-top: 18px;
 }
 .task-head {
-  background-color:#b7eede;
+  background-color: #b7eede;
   border: 1px solid #b7eede;
   color: #b7eede;
-  
 }
 .table-input {
   height: 57px;
@@ -60,12 +60,11 @@
 #end {
   margin-bottom: 1px;
   height: 19px;
-  color: #8C8C8C;
+  color: #8c8c8c;
 }
 .hash {
   width: 50px;
   height: 40px;
-  
 }
 
 #check-box {
@@ -77,20 +76,85 @@
   margin-left: 4px;
   margin-top: 6px;
 }
-.Planned{
-    border-radius: 50px;
-    color:  #F29B07;
-    background-color: #FFF5E3;
+.planned {
+  border-radius: 50px;
+  color: #f29b07;
+  background-color: #fff5e3;
+  font-family: var(--ff-inter--);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  padding: 4px 16px 4px 16px;
+  width: 100px;
 }
-.Completed{
-    border-radius: 50px;
-    color: #0D805D;
-    background-color:#E5FFF7;
+.completed {
+  border-radius: 50px;
+  color: #0d805d;
+  background-color: #e5fff7;
+  font-family: var(--ff-inter--);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  padding: 4px 16px 4px 16px;
+  width: 120px;
 }
-.In-progress{
-    border-radius: 50px;
-    color: #137FF2;
-    background-color: #9DD2EF42;
+.in-progress {
+  border-radius: 50px;
+  color: #137ff2;
+  background-color: #9dd2ef42;
+  font-family: var(--ff-inter--);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  padding: 4px 16px 4px 16px;
+  width: 120px;
+}
+
+/* personalinfo */
+.personal-form input {
+  height: 46px;
+  padding-left: 5px;
+}
+.input-employee {
+  height: 46px;
+  padding-left: 5px;
+}
+.save {
+  width: 217px;
+  height: 40px;
+  padding: 5px 46px 8px 46px;
+  border-radius: 4px;
+  background-color: #3439ca;
+  color: #f3f2fb;
+}
+.cancel {
+  width: 185px;
+  height: 40px;
+  padding: 5px 66px 8px 66px;
+  border-radius: 4px;
+  border: 1px solid #db3e3e;
+  color: #db3e3e;
+}
+/* Teams */
+.teams {
+  margin-bottom: 49px;
+}
+
+/* modals */
+.all-modal {
+  width: 420px;
+  height: 50px;
+  padding: 12px 84px 20px 84px;
+  border-radius: 5px;
+  background: #3439ca;
+}
+.edit-team {
+  width: 137px;
+  height: 40px;
+  padding: 5px 31px 8px 31px;
+  border-radius: 4px;
+  border: 1.5px solid #3439CA;
+  color:  #3439CA;
 }
 
 @media (max-width: 765px) {
@@ -115,16 +179,14 @@
   }
   #end {
     margin-bottom: 1px;
-    
-    
   }
 }
 @media (min-width: 765px) and (max-width: 1024px) {
-    .admin-summary {
-        width: 475px;
-    }
-  
-    .admin-summary-employee {
+  .admin-summary {
+    width: 475px;
+  }
+
+  .admin-summary-employee {
     flex-direction: column;
   }
   #start {

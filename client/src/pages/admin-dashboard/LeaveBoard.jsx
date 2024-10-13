@@ -61,7 +61,12 @@ const LeaveBoard = () => {
                      <p id="end">{End}</p>
                     </td>
                     <td className="pt-3">{Days}</td>
-                    <td className="pt-3">{Status}</td>
+                    <td className="pt-3"> <p
+                className={`action-status mt-2 ${Status
+                  .toLowerCase()}`}
+              >
+                {Status}
+              </p></td>
                     <td className="pt-3">{dot}</td>
                   </tr>
                 );

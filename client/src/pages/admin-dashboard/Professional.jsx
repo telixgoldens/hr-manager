@@ -66,12 +66,7 @@ const Professional = () => {
                   ? "active-link addEmploy"
                   : "text-secondary addEmploy"
               }
-              // onClick={() => {
-              //   setPersonalInfor(!false);
-              //   setProfessional(false);
-              //   setDocuments(false);
-              //   setAccountAccess(false);
-              // }}
+              
             >
               Personal Information
             </Link>
@@ -189,7 +184,7 @@ const Professional = () => {
             </div>
             {/* end */}
             <div className="d-lg-flex gap-3">
-              <Link className="w-25" to="">
+              <Link className="" to="">
                 <button className="cancel">Cancel</button>
               </Link>
               <button className="save mt-3 mt-lg-0"onClick={() => setModalShow(true)}>Save & Continue</button>

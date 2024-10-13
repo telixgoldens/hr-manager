@@ -67,12 +67,12 @@ const TaskBoard = () => {
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1"
                     >
-                      <Form.Label className="d-flex justify-content-between flex-column">
+                      <Form.Label className="d-flex justify-content-between flex-colu">
                         <p className="d-flex flex-column">
-                          Start Date <input type="date" />
+                          Start Date <input type="date"  className="w-100"/>
                         </p>
                         <p className="d-flex flex-column">
-                          End date <input type="date" />
+                          End date <input type="date" className="w-100"/>
                         </p>
                       </Form.Label>
                     </Form.Group>
@@ -136,11 +136,11 @@ const TaskBoard = () => {
           <Table responsive="lg">
             <thead className="">
               <tr className="task-head">
-                <th className=" hash container">#</th>
-                <th className="">Task</th>
-                <th>Team</th>
-                <th>Duration</th>
-                <th>Action</th>
+                <th className=" bg-light hash container">#</th>
+                <th className="bg-light">Task</th>
+                <th className="bg-light">Team</th>
+                <th className="bg-light">Duration</th>
+                <th className="bg-light">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -164,7 +164,13 @@ const TaskBoard = () => {
                       <p id="start">{Start}</p>
                       <p id="end">{End}</p>
                     </td>
-                    <td className="">{Action}</td>
+                    <td className=""> <p
+                className={`action-status mt-2 ${Action
+                  .replace(/\s+/, "-")
+                  .toLowerCase()}`}
+              >
+                {Action}
+              </p></td>
                   </tr>
                 );
               })}

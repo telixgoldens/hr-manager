@@ -17,6 +17,11 @@ import PersonalInfo from "./pages/admin-dashboard/PersonalInfo";
 import Teams from "./pages/admin-dashboard/Teams";
 import NewTeams from "./pages/admin-dashboard/NewTeams";
 import EditTeams from "./pages/admin-dashboard/EditTeams";
+import Dashboard from "./pages/employee-dashboard/Dashboard";
+import EmployeeDashboard from "./pages/employee-dashboard/EmployeeDashboard";
+import EmployeeTaskboard from "./pages/employee-dashboard/EmployeeTaskboard";
+import EmployeeLeaveboard from "./pages/employee-dashboard/EmployeeLeaveboard";
+import EmployeeSettings from "./pages/employee-dashboard/EmployeeSettings";
 
 function App() {
   return (
@@ -49,6 +54,13 @@ function App() {
             <Route path="/admin-dashboard/taskboard" element={<TaskBoard />} />
             <Route path="/admin-dashboard/payroll" element={<PayRoll/>}/>
             <Route path="/admin-dashboard/settings" element={<Settings/>}/>
+          </Route>
+          <Route path="/employee-dashboard" element={<Dashboard/>}>
+          <Route path="/employee-dashboard/dashboard" element={<EmployeeDashboard/>}/>
+          <Route path="/employee-dashboard/taskboard" element={<EmployeeTaskboard/>}/>
+          <Route path="/employee-dashboard/leaveboard" element={<EmployeeLeaveboard/>}/>
+          <Route path="/employee-dashboard/settings" element={<EmployeeSettings/>}/>
+
           </Route>
         </Routes>
       </BrowserRouter>

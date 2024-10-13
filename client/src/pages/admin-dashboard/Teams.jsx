@@ -24,7 +24,7 @@ function MyVerticallyCenteredModal(props) {
           <h1>Product Team</h1>
           <div className="d-flex gap-lg-4 gap-3 align-items-center">
             <Link to="/admin-dashboard/employees/teams/edit-teams">
-              <button className="editTeam">Edit Team</button>
+              <button className="edit-team">Edit Team</button>
             </Link>
             <img onClick={props.onHide} src={xIcon} />
           </div>
@@ -118,17 +118,17 @@ const Teams = () => {
                   backgroundColor: "#3439CA",
                   fontFamily: "Bricolage Grotesque, sans-serif",
                 }}
-                className="newEmployeebtn px-3"
+                className="task-btn px-3"
               >
-                <img src={addIcon} className="me-1" />
+                <img src={addIcon} className="me-1" id="plus" />
                 New Team
               </button>
             </Link>
           </div>
           <hr />
           <div className="d-lg-flex row">
-            <div className="d-lg-flex gap-5 w-100">
-              <div className="border p-3 rounded  teams">
+            <div className="d-lg-flex gap-4 justify-content-between ">
+              <div className="border p-3 rounded w-50 teams">
                 <div className="d-flex align-items-center justify-content-between">
                   <div>
                     <h2>Product Team </h2>
@@ -165,7 +165,7 @@ const Teams = () => {
                   );
                 })}
               </div>
-              <div className="border p-3 rounded col-4 teams">
+              <div className="border p-3 rounded col-4 w-50 teams">
                 <div className="d-flex align-items-center justify-content-between">
                   <div>
                     <h2>Marketing Team </h2>
@@ -204,8 +204,8 @@ const Teams = () => {
               </div>
             </div>
             {/* ============== */}
-            <div className="d-lg-flex w-100 gap-5">
-              <div className="border p-3 rounded   teams">
+            <div className="d-lg-flex gap-4 justify-content-between">
+              <div className="border p-3 rounded w-50  teams">
                 <div className="d-flex align-items-center justify-content-between">
                   <div>
                     <h2>Administration Team </h2>
@@ -242,7 +242,7 @@ const Teams = () => {
                   );
                 })}
               </div>
-              <div className="border p-3 rounded  col-4 teams">
+              <div className="border p-3 rounded w-50  col-4 teams">
                 <div className="d-flex align-items-center justify-content-between">
                   <div>
                     <h2>Operations Team</h2>

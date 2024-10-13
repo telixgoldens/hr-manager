@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { sideBarLinks } from "../../db";
 import appLogo from "../../assets/Frame 1000003286.svg";
 import arrowUp from "../../assets/Vector.svg";
 import arrowDown from "../../assets/Vector (1).svg";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "../../styles/Admindashboard.css";
 import Navbar from "../../layouts/Navbar";
+import { employeeBarLinks } from "../../employeeTables";
+import "../../styles/Allemployees.css"
 
-const Admindashboard = () => {
+const Dashboard = () => {
   const location = useLocation();
   useEffect(()=> {
     window.scrollTo(0,0);
@@ -45,7 +46,7 @@ const Admindashboard = () => {
             <div className="admin-dashboard-section-1-div-2">
               <h2>MAIN MENU</h2>
               <div>
-                {sideBarLinks.map((sideBarLinks) => {
+                {employeeBarLinks.map((sideBarLinks) => {
                   const { id, path, Icon, name } = sideBarLinks;
                   return (
                     <NavLink key={id} to={path} end>
@@ -75,4 +76,4 @@ const Admindashboard = () => {
   );
 };
 
-export default Admindashboard;
+export default Dashboard;

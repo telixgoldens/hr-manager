@@ -26,7 +26,7 @@ function MyVerticallyCenteredModal(props) {
     </Modal>
   );
 }
-const Settings = () => {
+const EmployeeSettings = () => {
   const {
     register,
     handleSubmit,
@@ -149,4 +149,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default EmployeeSettings;

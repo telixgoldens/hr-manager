@@ -3,7 +3,7 @@ import { payRollgraph, payRollTable } from "../../taskboard";
 import Table from "react-bootstrap/Table";
 import { useState } from "react";
 import "../../styles/PayRoll.css"
-import PayrollModal from "./PayrollModal";
+import PayrollModal from "./modals/PayrollModal";
 
 
 const PayRoll = () => {

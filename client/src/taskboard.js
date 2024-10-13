@@ -172,7 +172,7 @@ export const leaveBoard = [
     Start: "Start: 10 Mar 2023",
     End: "End: 10 Mar 2023",
     Days: "6 Days",
-    Status: "pending",
+    Status: "Pending",
     dot: "...",
   },
   {
@@ -183,7 +183,7 @@ export const leaveBoard = [
     Start: "Start: 10 Mar 2023",
     End: "End: 10 Mar 2023",
     Days: "6 Days",
-    Status: "pending",
+    Status: "Pending",
     dot: "...",
   },
   {
@@ -216,7 +216,7 @@ export const leaveBoard = [
     Start: "Start: 10 Mar 2023",
     End: "End: 10 Mar 2023",
     Days: "6 Days",
-    Status: "pending",
+    Status: "Pending",
     dot: "...",
   },
   {
