@@ -1,3 +1,7 @@
+.active-link{
+  border-bottom: 3px solid rgb(73, 78, 229);
+  color: rgba(17, 16, 20, 1) !important;
+}
 .hybrid {
   border-radius: 50px;
   color: #3439ca;
@@ -24,6 +28,15 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 19.36px;
+}
+.upload-img{
+  height: 200px;
+  width: 200px;
+  margin-bottom: 37px;
+  
+}
+.inner-img{
+  margin-top: 80px;
 }
 
 @media (max-width: 768px) {

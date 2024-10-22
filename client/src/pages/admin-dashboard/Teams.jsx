@@ -90,7 +90,7 @@ const Teams = () => {
   return (
     <>
       {match ? (
-        <main className="mt-lg-5 container">
+        <main className="mt-lg-5 ">
           {/*  */}
           <h1 className="mt-4">Employees</h1>
           <p className="title">Dashboard/Employee</p>

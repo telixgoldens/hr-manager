@@ -39,7 +39,7 @@ const Settings = () => {
 
   return (
     <>
-      <main className="mt-lg-5 container">
+      <main className="mt-lg-5 ">
         <div>
           <h1 className="pt-4 ">Settings</h1>
           <p className="">Dashboard/Settings</p>

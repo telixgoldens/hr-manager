@@ -8,7 +8,7 @@ import iIcon from "../../assets/I-icon.svg";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import successIcon from "../../assets/Success Icon.svg";
-
+import Imgupload from "../../assets/Imgupload.svg";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -56,7 +56,7 @@ const PersonalInfo = () => {
   return (
     <>
       {match ? (
-        <main className="mt-3 container personal">
+        <main className="mt-3 ">
           <h1 className="fs-2">Add New Employee</h1>
           <h2 className="fs-4 mb-4">All Employees / Add New Employee</h2>
           <div className="d-flex align-items-center gap-3">
@@ -84,12 +84,6 @@ const PersonalInfo = () => {
                     ? "active-link addEmploy"
                     : "text-secondary addEmploy"
                 }
-                // onClick={() => {
-                //   setProfessional(false);
-                //   setPersonalInfor(false);
-                //   setDocuments(false);
-                //   setAccountAccess(false);
-                // }}
               >
                 Professional
               </Link>
@@ -100,9 +94,8 @@ const PersonalInfo = () => {
                     ? "active-link addEmploy"
                     : "text-secondary addEmploy"
                 }
-                
               >
-                Documents
+                Salary
               </Link>
               <Link
                 to="/admin-dashboard/employees/personal-info/account-access"
@@ -111,14 +104,8 @@ const PersonalInfo = () => {
                     ? "active-link addEmploy"
                     : "text-secondary addEmploy"
                 }
-                // onClick={() => {
-                //   setAccountAccess(!false);
-                //   setPersonalInfor(false);
-                //   setProfessional(false);
-                //   setDocuments(false);
-                // }}
               >
-                Account Access
+                User Account
               </Link>
             </div>
           </div>
@@ -231,14 +218,22 @@ const PersonalInfo = () => {
                 </div>
               </div>
               <div className="d-flex row mb-3">
-                <label className="">Thumbnail</label>
-                <p className="text-secondary">
-                  <img src={iIcon} className="pb-1" />
-                  This image will appear in the explore page, upload a square
-                  size of 2mb.
-                </p>
-
-                <input type="file" className="custom-file-input" />
+                <div>
+                  <label className="">Thumbnail</label>
+                  <p className="text-secondary">
+                    <img src={iIcon} className="pb-1" />
+                    This image will appear in the explore page, upload a square
+                    size of 2mb.
+                  </p>
+                </div>
+              </div>
+              <div className="upload-img bg-light d-flex flex-column align-items-center">
+                <img src={Imgupload} alt="" className="inner-img"/>
+                <input
+                  type="file"
+                  className="  top-5 start-0 translate-middle-y opacity-0"
+                  role="button"
+                />
               </div>
               {/* end */}
               <div className="d-lg-flex gap-3 ">

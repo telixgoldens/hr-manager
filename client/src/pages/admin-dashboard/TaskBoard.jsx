@@ -1,21 +1,19 @@
 import React from "react";
 import { taskboard } from "../../taskboard";
+import { Link, useMatch, useParams } from "react-router-dom";
 import { useState } from "react";
 import { adminTables } from "../../db";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
 import "../../styles/Taskboard.css";
 import plus from "../../assets/plus.svg";
-import successIcon from "../../assets/Success Icon.svg";
+import ShortModal from "./modals/ShortModal";
 
 const TaskBoard = () => {
-  const [show, setShow] = useState(false);
-  const [lgShow, setLgShow] = useState(false);
+  const match = useMatch("/admin-dashboard/taskboard");
+  const [modalShow, setModalShow] = React.useState(false);
+  const [selectedTask, setSelectedTask] = useState(null);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <>
       <main className="taskboard-admin">
@@ -24,89 +22,12 @@ const TaskBoard = () => {
             <h1 className="taskboard-h1">Taskboard</h1>
             <div className="d-flex justify-content-between taskboard ">
               <h3 className="taskboard-h3">Dashboard/Taskboard</h3>
-              <h4 className="btn task-btn" onClick={handleShow}>
-                <img src={plus} alt="plus" id="plus" /> New Task
-              </h4>
-
-              <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Create New Task</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <Form>
-                    <Form.Group
-                      className="mb-3"
-                      controlId="exampleForm.ControlInput1"
-                    >
-                      <Form.Label>Task Title</Form.Label>
-                      <Form.Control
-                        type="text"
-                        placeholder="Enter Name"
-                        autoFocus
-                      />
-                    </Form.Group>
-                    <Form.Group
-                      className="mb-3"
-                      controlId="exampleForm.ControlInput1"
-                    >
-                      <Form.Group
-                        className="mb-3"
-                        controlId="exampleForm.ControlTextarea1"
-                      >
-                        <Form.Label>Task Description</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
-                      </Form.Group>
-                      <Form.Label>Assigns Person</Form.Label>
-                      <select name="" id="person" className="w-100 select-form">
-                        <option className="select" value="select">
-                          Select
-                        </option>
-                      </select>
-                    </Form.Group>
-                    <Form.Group
-                      className="mb-3"
-                      controlId="exampleForm.ControlTextarea1"
-                    >
-                      <Form.Label className="d-flex justify-content-between flex-colu">
-                        <p className="d-flex flex-column">
-                          Start Date <input type="date"  className="w-100"/>
-                        </p>
-                        <p className="d-flex flex-column">
-                          End date <input type="date" className="w-100"/>
-                        </p>
-                      </Form.Label>
-                    </Form.Group>
-
-                    <Form.Label>Task Status</Form.Label>
-                    <select name="" id="status" className="w-100 select-form">
-                      <option className="select" value="select">
-                        Select
-                      </option>
-                    </select>
-                  </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                    <Modal
-                      size="lg"
-                      show={lgShow}
-                      onHide={() => setLgShow(false)}
-                      aria-labelledby="example-modal-sizes-title-lg"
-                    >
-                      <Modal.Header closeButton>
-                        <Modal.Title id="example-modal-sizes-title-lg">
-                          Save
-                        </Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>check this out</Modal.Body>
-                    </Modal>
-                  </Button>
-                </Modal.Footer>
-              </Modal>
+              <Link to="/admin-dashboard/taskboard/new-task">
+                <button className="task-btn">
+                  <img src={plus} className="me-1" />
+                  New Task
+                </button>
+              </Link>
             </div>
           </div>
           <div className="d-flex gap-2 justify-content-between task-summary">
@@ -156,7 +77,18 @@ const TaskBoard = () => {
                         className="container"
                       />
                     </td>
-                    <td className="table-input pt-3">{Task}</td>
+                    <td className="table-input pt-3">
+                      {" "}
+                      <p
+                        onClick={() => {
+                          setSelectedTask(adminTables);
+                          setModalShow(true);
+                        }}
+                        className=" pointer"
+                      >
+                        {Task}
+                      </p>
+                    </td>
                     <td>
                       <img src={Team} alt="" />
                     </td>
@@ -164,18 +96,27 @@ const TaskBoard = () => {
                       <p id="start">{Start}</p>
                       <p id="end">{End}</p>
                     </td>
-                    <td className=""> <p
-                className={`action-status mt-2 ${Action
-                  .replace(/\s+/, "-")
-                  .toLowerCase()}`}
-              >
-                {Action}
-              </p></td>
+                    <td className="">
+                      {" "}
+                      <p
+                        className={`action-status mt-2 ${Action.replace(
+                          /\s+/,
+                          "-"
+                        ).toLowerCase()}`}
+                      >
+                        {Action}
+                      </p>
+                    </td>
                   </tr>
                 );
               })}
             </tbody>
           </Table>
+          <ShortModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            task={selectedTask}
+          />
         </div>
       </main>
     </>

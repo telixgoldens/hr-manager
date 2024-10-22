@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Bell from "../assets/Bell.svg";
 import lady from "../assets/lady.svg";
 import arowDown from "../assets/arrowDown.svg";
@@ -7,12 +7,22 @@ import messageIcon from "../assets/messageIcon.svg";
 import "../styles/Navbar.css";
 import AuthDropDown from "../components/AuthDropDown";
 import OffCanvass from "../components/OffCanvass";
+import AuthContext from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isTrue, setIsTrue] = useState(false);
+  const {user,setUser} = useContext(AuthContext)
+  const navigate = useNavigate()
   function handleReveal() {
     isTrue ? setIsTrue(false) : setIsTrue(true);
   }
+  const logout = () => {
+    // setUser(null);
+    localStorage.removeItem("hr-token");
+    navigate("/auth/signin")
+
+  };
 
   return (
     <>
@@ -53,7 +63,7 @@ const Navbar = () => {
                 className=" d-none d-md-block"
               />
             </div>
-            <h4 className="d-none d-lg-block">Aliyu Aliyu</h4>
+            <h4 className="d-none d-lg-block"> {user && user?.firstName} </h4>
             <img
               onClick={handleReveal}
               role="button"
@@ -65,7 +75,8 @@ const Navbar = () => {
         </div>
       </nav>
       <div className="position-absolute end-0 me-5 pe-1 ">
-        {isTrue && <AuthDropDown />}
+        {isTrue &&  <p role="button" onClick={logout}>logout</p>}
+       
       </div>
     </>
   );

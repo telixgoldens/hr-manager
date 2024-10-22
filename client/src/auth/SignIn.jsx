@@ -1,23 +1,59 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HRimg from "../assets/Frame 1000003286.svg";
 import "../styles/SignIn.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signInSchema } from "../lib/Validation";
+import toast from 'react-hot-toast'
 
-const onSubmit = (data) => console.log(data);
 const SignIn = () => {
+  const [isClicked, setIsClicked] = useState(false)
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors , isSubmitting},
   } = useForm({
     resolver: yupResolver(signInSchema),
   });
   useEffect(() => {
     document.title = "Sign In";
   });
+  async function handleSignIn(data) {
+    setIsClicked(true)
+    try {
+      const req = await fetch("http://localhost:3434/api/auth/signin",{
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        body:JSON.stringify(data)
+      })
+      const res = await req.json();
+      console.log(res);
+      if(!res.success){
+        toast.error(res.errMsg)
+      }
+      if(res.success){
+        toast.success(res.message)
+        localStorage.setItem("hr-token",res.user.token)
+        if(res.user.role === "super-admin" || res.user.role === "admin"){
+          navigate("/admin-dashboard")
+          // window.location.reload()
+
+        }else{
+          navigate("/employee-dashboard")
+        }
+      }
+    } catch (error) {
+      
+    }finally{
+      setIsClicked(false)
+    }
+  }
+  const btnText = isClicked ? "loading" : "Sign In"
   return (
     <>
       <main className="sign-in d-flex justify-content-center align-items-center ">
@@ -29,7 +65,7 @@ const SignIn = () => {
           <h2 className="text-center sign-in-hr">
             Welcome to HR Manager - Where Creativity Meets Opportunity!
           </h2>
-          <form className="" onSubmit={handleSubmit(onSubmit)}>
+          <form className="" onSubmit={handleSubmit(handleSignIn)}>
             <div className="d-flex flex-column">
               <div>
                 <label htmlFor="">Email</label>
@@ -65,7 +101,7 @@ const SignIn = () => {
               </div>
             </div>
 
-            <button className="sign-in-btn">Sign In</button>
+            <button className="sign-in-btn" disabled={isSubmitting}>{btnText}</button>
           </form>
         </div>
       </main>

@@ -54,7 +54,7 @@ const Professional = () => {
 
   return (
     <>
-      <main className="mt-3 container">
+      <main className="mt-3">
         <h1 className="fs-2">Add New Employee</h1>
         <h2 className="fs-4 mb-4">All Employees / Add New Employee</h2>
         <div className="d-flex align-items-center gap-3">
@@ -91,14 +91,9 @@ const Professional = () => {
               className={
                 documents ? "active-link addEmploy" : "text-secondary addEmploy"
               }
-              // onClick={() => {
-              //   setDocuments(!false);
-              //   setPersonalInfor(false);
-              //   setProfessional(false);
-              //   setAccountAccess(false);
-              // }}
+              
             >
-              Documents
+              Salary
             </Link>
             <Link
               to="/admin-dashboard/employees/personal-info/account-access"
@@ -107,14 +102,9 @@ const Professional = () => {
                   ? "active-link addEmploy"
                   : "text-secondary addEmploy"
               }
-              // onClick={() => {
-              //   setAccountAccess(!false);
-              //   setPersonalInfor(false);
-              //   setProfessional(false);
-              //   setDocuments(false);
-              // }}
+             
             >
-              Account Access
+              User Account
             </Link>
           </div>
         </div>

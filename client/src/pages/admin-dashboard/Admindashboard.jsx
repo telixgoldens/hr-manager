@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { sideBarLinks } from "../../db";
 import appLogo from "../../assets/Frame 1000003286.svg";
 import arrowUp from "../../assets/Vector.svg";
@@ -6,8 +6,10 @@ import arrowDown from "../../assets/Vector (1).svg";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "../../styles/Admindashboard.css";
 import Navbar from "../../layouts/Navbar";
+import AuthContext from "../../context/AuthContext";
 
 const Admindashboard = () => {
+  const {user} = useContext(AuthContext)
   const location = useLocation();
   useEffect(()=> {
     window.scrollTo(0,0);
@@ -24,7 +26,7 @@ const Admindashboard = () => {
                 </div>
                 <div>
                   <h2 className="mb-0">HR Manager</h2>
-                  <p className="">hrmanager@yahoo.com</p>
+                  <p className=""> {user && user?.email} </p>
                 </div>
               </div>
               <div>

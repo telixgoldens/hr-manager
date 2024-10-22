@@ -49,14 +49,14 @@ const NewTeams = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <>
-      <main className="mt-lg-5 container">
+      <main className="mt-lg-5 ">
         <div className="mt-4">
           <h1 className="mb-4">Create New Team</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* 1 */}
             <div className="mb-5">
               <div className=" gap-5 mb-4">
-                <div className="col-lg mb-3 mb-lg-0 w-100">
+                <div className="col-lg mb-3 mb-lg-0 w-50">
                   <label>Amount</label>
                   <input
                     type="text"
@@ -66,7 +66,7 @@ const NewTeams = () => {
                   />
                   <p className="text-danger">{errors.generalFirst?.message}</p>
                 </div>
-                <div className="col-lg w-100">
+                <div className="col-lg w-50">
                   <label>Employee Status</label>
                   <select
                     name="gender"
@@ -84,7 +84,7 @@ const NewTeams = () => {
                   </select>
                 </div>
               </div>
-              <div className="col-lg w-100">
+              <div className="col-lg w-50">
                 <label>Employee Status</label>
                 <select
                   name="gender"

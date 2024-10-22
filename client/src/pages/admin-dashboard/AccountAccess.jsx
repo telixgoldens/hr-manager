@@ -51,11 +51,11 @@ const AccountAccess = () => {
     setSelectedDepartmentOption(event.target.value);
   };
 
-  // =================================
+  
 
   return (
     <>
-      <main className="mt-3 container personal">
+      <main className="mt-3 ">
         <h1 className="fs-2">Add New Employee</h1>
         <h2 className="fs-4 mb-4">All Employees / Add New Employee</h2>
         <div className="d-flex align-items-center gap-3">
@@ -67,12 +67,7 @@ const AccountAccess = () => {
                   ? "active-link addEmploy"
                   : "text-secondary addEmploy"
               }
-              // onClick={() => {
-              //   setPersonalInfor(!false);
-              //   setProfessional(false);
-              //   setDocuments(false);
-              //   setAccountAccess(false);
-              // }}
+           
             >
               Personal Information
             </Link>
@@ -83,12 +78,7 @@ const AccountAccess = () => {
                   ? "active-link addEmploy"
                   : "text-secondary addEmploy"
               }
-              // onClick={() => {
-              //   setProfessional(!false);
-              //   setPersonalInfor(false);
-              //   setDocuments(false);
-              //   setAccountAccess(false);
-              // }}
+        
             >
               Professional
             </Link>
@@ -97,14 +87,9 @@ const AccountAccess = () => {
               className={
                 documents ? "active-link addEmploy" : "text-secondary addEmploy"
               }
-              // onClick={() => {
-              //   setDocuments(!false);
-              //   setPersonalInfor(false);
-              //   setProfessional(false);
-              //   setAccountAccess(false);
-              // }}
+       
             >
-              Documents
+              Salary
             </Link>
             <Link
               to=""
@@ -120,7 +105,7 @@ const AccountAccess = () => {
                 setDocuments(false);
               }}
             >
-              Account Access
+              User Account
             </Link>
           </div>
         </div>
